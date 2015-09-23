@@ -1,15 +1,6 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Создание типа почтового события");
-?>
-<?
-
-// Создание типа почтового события
-//ВРЕМЕННЫЙ КОД ВРЕМЕННЫЙ КОД ВРЕМЕННЫЙ КОД
-$et = new CEventType;
-$et->Delete("UG_EVENT");
-//ВРЕМЕННЫЙ КОД ВРЕМЕННЫЙ КОД ВРЕМЕННЫЙ КОД
-
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Создание типа почтового события");?>
+<?// Создание типа почтового события
 function UET($EVENT_NAME, $NAME, $LID, $DESCRIPTION)
 {
     $et = new CEventType;
@@ -45,46 +36,5 @@ $arr["MESSAGE"] = "
 
 $emess = new CEventMessage;
 $UGEventMessageID = $emess->Add($arr);
-
-//ВРЕМЕННЫЙ КОД ВРЕМЕННЫЙ КОД ВРЕМЕННЫЙ КОД
-$etmp = new CEventMessage;
-$etmp->Delete($UGEventMessageID-1);
-//ВРЕМЕННЫЙ КОД ВРЕМЕННЫЙ КОД ВРЕМЕННЫЙ КОД		
-
-//Создание почтового события
-
-/*
-function UGEventSend(){
-	$arUsers = CUser::GetList($by="email",$order = "ASC",array("GROUPS_ID" => "8"));
-	while($tmp = $arUsers->Fetch())
-		$EMAIL_TO[]=$tmp["EMAIL"];
-	
-	$rsSites = CSite::GetByID(SITE_ID);
-	$arSite = $rsSites->Fetch();
-	$arEventFields = array(
-    ["EMAIL_TO"]            => implode(",", $EMAIL_TO),
-	["SITE_NAME"] 			=> $arSite["NAME"]
-	["TIME_INTERVAL_UG"]	=>
-	["DETAIL_PAGE_URL"]		=> 
-	["PRODUCT_NAME"]		=>
-	["PRODUCT_ID"]          =>
-	["PRODUCT_PRICE"]       =>
-	["PRODUCT_QUANTITY"]    =>
-    );                      
-
-$arEventFields = array(
-    ["EMAIL_TO"]            => implode(",", $EMAIL_TO),
-	["SITE_NAME"] 			=> 
-	["TIME_INTERVAL_UG"]	=>
-	["DETAIL_PAGE_URL"]		=> 
-	["PRODUCT_NAME"]		=>
-	["PRODUCT_ID"]          =>
-	["PRODUCT_PRICE"]       =>
-	["PRODUCT_QUANTITY"]    =>
-    );                     
-$arrSITE =  CAdvContract::GetSiteArray($CONTRACT_ID);
-$UGEventSend = CEvent::Send("UG_EVENT","s1", $arEventFields);
-print_r($UGEventSend);
-*/
 ?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

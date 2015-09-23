@@ -19,8 +19,15 @@ $arComponentParameters = array(
 			"NAME" => GetMessage('REPORT_GENERATION_TIME'),
 			"TYPE" => "STRING",
 			"DEFAULT" => "7",
-			"COLS" => "4",
-),
+			"COLS" => "4"
+			),
+		"IS_AGENT" => array(
+			"PARENT" => "SETTINGS",
+			"NAME" => GetMessage('COMP_FROM_AGENT'),
+			"TYPE" => "CHECKBOX",
+			"DEFAULT" => false,
+			"COLS" => "4"
+			),
    )
 );
 ?>
