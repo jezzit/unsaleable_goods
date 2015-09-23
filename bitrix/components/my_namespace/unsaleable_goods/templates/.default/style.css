@@ -1,0 +1,15 @@
+table  {
+	border: 2px solid;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:Verdana;
+}
+.UG_TD_NAME
+{
+	text-align: left;
+}
+table.UG td {
+	padding: 5px;
+	border: 1px solid #000;
+	text-align: center;
+	}
