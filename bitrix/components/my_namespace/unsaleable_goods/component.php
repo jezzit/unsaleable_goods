@@ -111,7 +111,5 @@ else {
 	
 	$arrSITE =  CAdvContract::GetSiteArray($CONTRACT_ID);
 	$tmp = CEvent::Send("UG_EVENT", $arrSITE, $arEventFields);
-	
-	$arParams["IS_AGENT"] = false;
 }
 ?>

@@ -14,6 +14,12 @@ function UET($EVENT_NAME, $NAME, $LID, $DESCRIPTION)
 
 $UGEventTypeID = UET("UG_EVENT","Регулярная отправка информации о непродаваемых товарах","s1","Описание");
 
+if ($UGEventTypeID)
+	echo "Успешно создан новый тип почтового события. ID: ".$UGEventTypeID;
+else
+	echo "Ошибка при создании типа почтового события";
+echo "</br>";
+COption::SetOptionString("main", "check_agents", "Y"); 
 // Создание почтового шаблона
 $arr["ACTIVE"] = "Y";
 $arr["EVENT_NAME"] = "UG_EVENT";
@@ -36,5 +42,10 @@ $arr["MESSAGE"] = "
 
 $emess = new CEventMessage;
 $UGEventMessageID = $emess->Add($arr);
+
+if ($UGEventMessageID)
+	echo "Успешно создан новый почтовый шаблон. ID: ".$UGEventMessageID;
+else
+	echo "Ошибка при создании почтового шаблона";
 ?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

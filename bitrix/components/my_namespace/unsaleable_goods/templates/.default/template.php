@@ -11,10 +11,10 @@
 <?
 foreach($arResult as $item) {
 	echo "<tr>";
-	echo "<td class=\"UG_TD_NAME\">".$item["NAME"]."</td>";
+	echo '<td class="UG_TD_NAME">'.$item["NAME"]."</td>";
 	echo "<td>".$item["PRODUCT_ID"]."</td>";
 	echo "<td>".$item["PRICE"]."</td>";
-	echo "<td><a href=\"".$item["DETAIL_PAGE_URL"]."\">Страница товара</a></td>";
+	echo '<td><a href="'.$item["DETAIL_PAGE_URL"].'">Страница товара</a></td>';
 	echo "<td>".round($item["QUANTITY"])."</td>";
 	echo "</tr>";
 }

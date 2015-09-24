@@ -13,8 +13,8 @@ $APPLICATION->SetTitle("Персональный раздел");
 		<a href="order/">Ознакомиться с состоянием заказов</a><br/>
 		<a href="cart/">Посмотреть содержимое корзины</a><br/>
 		<a href="order/">Посмотреть историю заказов</a><br/>
-		<?if (in_array(8, CUser::GetUserGroup($USER->GetID()))) 
-			echo "<a href=\"unsaleable_goods/\">Непродаваемые заказы</a><br/>";?>
+		<?if (in_array(8, CUser::GetUserGroup($USER->GetID()))){?> 
+		<a href="unsaleable_goods/">Непродаваемые заказы</a><br/><?}?>
 	</div>
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
